@@ -1,7 +1,7 @@
 # 🧰 แพ็ก Skill สำหรับพัฒนางาน 4 (ยังไม่ติดตั้ง)
 
 > รวม skill / plugin ที่จำเป็นและน่าเชื่อถือสำหรับงาน 4 (Enterprise OS บน ERPNext) — **ติดตั้งทีเดียวด้วยคำสั่งเดียวเมื่อพร้อม**
-> รีวิวต้นทางแล้วเมื่อ 16 ต.ค. 2569 · รายการและ commit ที่ pin อยู่ใน [`skills.json`](skills.json) · ความปลอดภัยทั้งระบบดู [04l](../../04-erpnext-enterprise-os/04l-security-baseline.md)
+> รีวิวต้นทางแล้วเมื่อ 16 ต.ค. 2569 · รายการและ commit ที่ pin อยู่ใน [`skills.json`](skills.json) · ความปลอดภัยทั้งระบบดู [04l](../../Document/plan-draft/04-erpnext-enterprise-os/04l-security-baseline.md)
 
 ## ติดตั้ง
 
@@ -40,7 +40,7 @@ powershell -ExecutionPolicy Bypass -File "$HOME\Desktop\Workhard\IT-AI-Portfolio
 | `frontend-design` | 🟢 Anthropic | skill | ออกแบบหน้า AI Workspace | Markdown ล้วน |
 | `context7` | 🔵 Upstash | plugin | เอกสารเวอร์ชันล่าสุดของ FastAPI · Next.js · pgvector · LangGraph | MCP ภายนอก `mcp.context7.com` — ส่งชื่อไลบรารีและคำถามออกนอกเครื่อง |
 | `how` | 🟠 Lauren Tan ([pstack](https://github.com/cursor/plugins/tree/main/pstack) · MIT) | skill (ฉบับปรับ) | อธิบายว่าโค้ดส่วนหนึ่งทำงานยังไง และโค้ดใหม่ควรอยู่ตรงไหน เช่น Frappe ตอนขั้น 0.3 | Markdown ล้วน · สั่ง subagent แบบอ่านอย่างเดียว (`Explore` / `Plan`) |
-| `create-verification-skill` | 🟠 Lauren Tan (pstack · MIT) | skill (ฉบับปรับ) | สร้าง `verify-p4` ตาม [04c ข้อ 5.6](../../04-erpnext-enterprise-os/04c-build-guide.md#56-skill-ตรวจงาน-verify-p4): launch · doctor · drive · evidence · cleanup + แผนที่ฟีเจอร์ | Markdown ล้วน · ตอนสร้างจะเปิดแอปจริง 1 รอบเพื่อพิสูจน์ |
+| `create-verification-skill` | 🟠 Lauren Tan (pstack · MIT) | skill (ฉบับปรับ) | สร้าง `verify-p4` ตาม [04c ข้อ 5.6](../../Document/plan-draft/04-erpnext-enterprise-os/04c-build-guide.md#56-skill-ตรวจงาน-verify-p4): launch · doctor · drive · evidence · cleanup + แผนที่ฟีเจอร์ | Markdown ล้วน · ตอนสร้างจะเปิดแอปจริง 1 รอบเพื่อพิสูจน์ |
 | `maintain-verification-skill` | 🟠 Lauren Tan (pstack · MIT) | skill (ฉบับปรับ) | ตรวจว่า `verify-p4` กับแผนที่ฟีเจอร์ยังตรงกับแอปก่อน `git tag` | Markdown ล้วน · subagent อ่านโค้ดทีละฟีเจอร์ แล้วขับแอปจริง |
 | `blast-radius` | 🟠 Lauren Tan (pstack · MIT) | skill (ฉบับปรับ) | หาว่าการแก้จะไปพังที่อื่นนอก diff ไหม และพิสูจน์ข้อที่ทำให้ปลอดภัยด้วยการรันโค้ด | Markdown ล้วน |
 | `correct` | 🟠 Lauren Tan (pstack · MIT) | skill (ฉบับปรับ) | เปลี่ยนเรื่องที่ต้องแก้ให้ AI ซ้ำ ๆ เป็น architecture · type · lint · test | Markdown ล้วน |
@@ -145,4 +145,4 @@ Copy-Item "$env:LOCALAPPDATA\Programs\Python\Python312\python.exe" "$env:LOCALAP
 - plugin รันด้วยสิทธิ์ของคุณ — hook ของ `security-guidance` ทำงานทุกครั้งที่แก้ไฟล์ จึงอาจทำให้แต่ละเทิร์นช้าลงเล็กน้อย
 - plugin / skill ที่เปิดอยู่จะใส่ชื่อและคำอธิบายลง context ทุกเทิร์น — ไม่ใช้ตัวไหนให้ปิดด้วย `claude plugin disable <name>@<marketplace>`
 - skill ที่แพ็กติดตั้งจะมีไฟล์ `.claude-skills-pack` ข้างใน — `-Uninstall` ลบเฉพาะโฟลเดอร์ที่มีไฟล์นี้ ไม่แตะ skill อื่นของคุณ · skill ที่ติดตั้งนอกแพ็กจะใช้ไฟล์ `.claude-skill-origin` แทน
-- skill ช่วยเฉพาะความปลอดภัยของ**โค้ด** — ชั้นอื่น (2FA · เครือข่าย · backup · แจ้งเตือน) อยู่ใน [04l](../../04-erpnext-enterprise-os/04l-security-baseline.md)
+- skill ช่วยเฉพาะความปลอดภัยของ**โค้ด** — ชั้นอื่น (2FA · เครือข่าย · backup · แจ้งเตือน) อยู่ใน [04l](../../Document/plan-draft/04-erpnext-enterprise-os/04l-security-baseline.md)

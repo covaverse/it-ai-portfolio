@@ -15,7 +15,7 @@
 
 | ลำดับอ่าน | ไฟล์ | เนื้อหา | ใช้ตอนไหน |
 |---|---|---|---|
-| 0 | [04k-dev-roadmap.md](04k-dev-roadmap.md) | **แผนลำดับการพัฒนา**: Phase 0 → MVP (Stage 0–7) → MVP+ → ต่อยอด · Milestone v0.1–v1.5 · งานคู่ขนาน · งาน 1–3 เกี่ยวไหม | เริ่มที่นี่ · ติดตามความคืบหน้า (ติ๊กได้ใน [viewer](../viewer/index.html)) |
+| 0 | [04k-dev-roadmap.md](04k-dev-roadmap.md) | **แผนลำดับการพัฒนา**: Phase 0 → MVP (Stage 0–7) → MVP+ → ต่อยอด · Milestone v0.1–v1.5 · งานคู่ขนาน · งาน 1–3 เกี่ยวไหม | เริ่มที่นี่ · ติดตามความคืบหน้า (ติ๊กได้ใน [viewer](../../../viewer/index.html)) |
 | 1 | [04-enterprise-os.md](04-enterprise-os.md) | **สเปกหลัก**: ทำไมไม่สร้าง ERP เอง · flow ทุกแผนก · Architecture · AI Gateway (สิทธิ์ ระดับอิสระ audit) · Agent · Eval · ภาษีไทย · Security | อ่านก่อนเสมอ |
 | 1.5 | [04f-module-map.md](04f-module-map.md) | **แผนผัง module + จุดเสียบ P1–P9**: ส่วนเสริมแต่ละตัวต่อเข้าที่ไหน · อะไรต้องมีก่อน · เพิ่ม module ใหม่ยังไง | ดูภาพรวมก่อนลงมือ |
 | 1.6 | [04g-department-flows.md](04g-department-flows.md) | **flow พนักงานแต่ละฝ่าย** แตกแขนงละเอียด: ขาย · จัดซื้อ · คลัง/ขนส่ง · สาขา 2 · บัญชี · การเงิน · HR · IT · ผู้บริหาร · ธุรการ · PMO | ออกแบบ Workflow / สิทธิ์ / เดโม |

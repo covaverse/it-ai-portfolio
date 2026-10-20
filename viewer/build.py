@@ -13,7 +13,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-P4 = "04-erpnext-enterprise-os/"
+P4 = "Document/plan-draft/04-erpnext-enterprise-os/"
 SKILL_COPIES = ROOT / "tools" / "claude-skills" / "local"   # skill ของคนอื่น (MIT) — ไม่รวมใน viewer ที่เผยแพร่
 
 NAME = "งาน 4 · Enterprise OS"
