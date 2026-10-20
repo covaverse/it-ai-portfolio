@@ -147,7 +147,7 @@ flowchart TD
 | # | ขั้น | ทำอะไร | ต้องมีก่อน | วัน | เสร็จเมื่อ |
 |---|---|---|---|---|---|
 | 0.0 | ติดตั้งแพ็ก skill | `install.ps1`: Frappe 2 skill · Anthropic 3 skill + plugin ความปลอดภัย 2 ตัว · Trail of Bits 4 ตัว · context7 · `how` ([แพ็ก](../tools/claude-skills/README.md)) · แก้ `python3` ก่อน · login context7 ผ่าน `/mcp` | — | 0.5 | `claude plugin list` เห็นครบ 7 plugin · skill ขึ้นใน session ใหม่ |
-| 0.1 | ติดตั้งเครื่องมือ | Docker Desktop (WSL2 · ให้ Docker ใช้ RAM ≥ 8 GB) · uv · Git · Node + pnpm ([04c ข้อ 5.1](04c-build-guide.md#51-เครื่องมือ)) | — | 1 | `docker run hello-world` ผ่าน · `uv --version` ได้ |
+| 0.1 | ติดตั้งเครื่องมือ | Docker Desktop (WSL2 · จำกัด RAM ใน `.wslconfig` 6 GB · ช้าไปเพิ่มเป็น 8 GB) · uv · Git · Node + pnpm ([04c ข้อ 5.1](04c-build-guide.md#51-เครื่องมือ)) | — | 1 | `docker run hello-world` ผ่าน · `uv --version` ได้ |
 | 0.2 | ลอง ERPNext แบบเร็ว | `pwd.yml` ของ frappe_docker → login → เดินดูเมนูขาย ซื้อ บัญชี ([ข้อมูลติดตั้ง](research/erpnext-reference.md#2-ติดตั้งด้วย-frappe_docker)) | 0.1 | 0.5 | สร้าง Sales Invoice ทดลองได้ 1 ใบ |
 | 0.3 | พื้นฐาน Frappe | DocType · Hooks · REST API · Webhook · custom app (ทำ tutorial ทางการของ Frappe Framework) · ถาม skill `how` ว่าโค้ด Frappe ส่วนไหนทำงานยังไง | 0.2 | 3–4 | เรียก `/api/resource` ได้ · สร้าง custom app เล็กๆ ได้ |
 | 0.4 | อ่านแบบ | 04 → 04f → 04c ตามลำดับใน [หน้าแรก](README.md#เอกสารในโฟลเดอร์นี้) | — | 0.5 | รู้ว่าแต่ละ Stage ทำอะไร ส่งต่ออะไร |

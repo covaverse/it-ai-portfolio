@@ -134,7 +134,7 @@ winget install --id Docker.DockerDesktop -e
 winget install --id astral-sh.uv -e
 ```
 
-> ERPNext stack ใช้หน่วยความจำมาก (หลายคอนเทนเนอร์) — ตั้ง Docker Desktop ให้ใช้ RAM อย่างน้อย 8 GB · ถ้ายังไม่เปิด WSL2 ให้รัน `wsl --install` แล้วรีสตาร์ต
+> ERPNext stack ใช้หน่วยความจำมาก (หลายคอนเทนเนอร์) — Docker Desktop บน WSL2 ใช้ RAM ตาม `%USERPROFILE%\.wslconfig` · เครื่อง 16 GB ตั้งไว้ `memory=6GB` + `swap=8GB` (ช้าลงบ้างแต่พอทดสอบ) · ถ้า ERPNext ช้ามากหรือ container ถูก kill ให้เพิ่มเป็น 8 GB แล้ว `wsl --shutdown` · ถ้ายังไม่มี WSL2 ให้รัน `wsl --install --no-distribution` แล้วรีสตาร์ต
 
 ### 5.2 ERPNext ด้วย frappe_docker
 
