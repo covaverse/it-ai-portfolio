@@ -1,0 +1,8 @@
+# viewer/publish has its own repo (covaverse/enterprise-os-plan)
+viewer/publish/
+# built by viewer/build.py
+viewer/index.html
+__pycache__/
+*.pyc
+.env
+node_modules/

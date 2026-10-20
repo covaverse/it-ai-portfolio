@@ -1,0 +1,248 @@
+{
+  "reviewed": "2026-10-17",
+  "marketplaces": {
+    "claude-plugins-official": {
+      "source": "anthropics/claude-plugins-official",
+      "reviewed_commit": "ea10b213686c90bb1984b2016937310e05336cf3"
+    },
+    "trailofbits": {
+      "source": "trailofbits/skills",
+      "reviewed_commit": "5c99c03fb8a9ea568432ecbcba5d86e9f4ac2bf0"
+    }
+  },
+  "items": [
+    {
+      "id": "frappe-app-dev",
+      "kind": "skill-copy",
+      "repo": "https://github.com/frappe/skills.git",
+      "commit": "c1118cbf175a3d4393fb7d02d749876eaf8a86e8",
+      "path": "skills/frappe-app-dev",
+      "publisher": "Frappe (github.com/frappe)",
+      "trust": "frappe-org",
+      "runs": "Markdown only (SKILL.md + references/)",
+      "why": "เขียน custom app ai_bridge: DocType · hooks · whitelisted API · permissions · bench · test ให้ถูกวิธีของ Frappe",
+      "phase": "0.3 · 1.2–1.4 · 2.x"
+    },
+    {
+      "id": "frappe-code-review",
+      "kind": "skill-copy",
+      "repo": "https://github.com/frappe/skills.git",
+      "commit": "c1118cbf175a3d4393fb7d02d749876eaf8a86e8",
+      "path": "skills/frappe-code-review",
+      "publisher": "Frappe (github.com/frappe)",
+      "trust": "frappe-org",
+      "runs": "Markdown only",
+      "why": "checklist review แอป Frappe: correctness · security · performance · concurrency · testing",
+      "phase": "ทุก Stage ที่แตะ ai_bridge"
+    },
+    {
+      "id": "security-guidance",
+      "kind": "plugin",
+      "plugin": "security-guidance",
+      "marketplace": "claude-plugins-official",
+      "publisher": "Anthropic",
+      "trust": "anthropic",
+      "runs": "hooks (bash) ที่ SessionStart · UserPromptSubmit · PostToolUse · Stop",
+      "why": "เตือนช่องโหว่ทันทีขณะเขียนโค้ด: injection · secret · SSRF · XSS และตรวจ diff ตอนจบงาน",
+      "phase": "ทั้งหมด"
+    },
+    {
+      "id": "claude-security",
+      "kind": "plugin",
+      "plugin": "claude-security",
+      "marketplace": "claude-plugins-official",
+      "publisher": "Anthropic",
+      "trust": "anthropic",
+      "runs": "คำสั่ง /claude-security (หลาย agent · ใช้โทเคนมาก) · hooks (sh) แสดง banner/tip · ต้องมี python3 ใน PATH",
+      "why": "สแกนช่องโหว่ทั้ง repo หรือเฉพาะ diff แล้วเขียน patch ให้รีวิว — รันทุก Gate",
+      "phase": "ทุก Gate · 1.11"
+    },
+    {
+      "id": "static-analysis",
+      "kind": "plugin",
+      "plugin": "static-analysis",
+      "marketplace": "trailofbits",
+      "publisher": "Trail of Bits",
+      "trust": "security-firm",
+      "runs": "สคริปต์ช่วยเรียก Semgrep / CodeQL (ต้องติดตั้งเครื่องมือเอง)",
+      "why": "สแกนโค้ดด้วย Semgrep / CodeQL และอ่านผล SARIF",
+      "phase": "1.2 · ทุก Gate"
+    },
+    {
+      "id": "insecure-defaults",
+      "kind": "plugin",
+      "plugin": "insecure-defaults",
+      "marketplace": "trailofbits",
+      "publisher": "Trail of Bits",
+      "trust": "security-firm",
+      "runs": "สคริปต์ตรวจ 1 ตัว",
+      "why": "หาค่าเริ่มต้นที่ไม่ปลอดภัย (fail-open) ใน config และโค้ด",
+      "phase": "1.4 · 1.11"
+    },
+    {
+      "id": "supply-chain-risk-auditor",
+      "kind": "plugin",
+      "plugin": "supply-chain-risk-auditor",
+      "marketplace": "trailofbits",
+      "publisher": "Trail of Bits",
+      "trust": "security-firm",
+      "runs": "สคริปต์ตรวจไลบรารี (เรียกข้อมูล advisory ของ PyPI / npm)",
+      "why": "ตรวจไลบรารี PyPI / npm: ช่องโหว่ · โปรเจกต์ร้าง · install script แปลกๆ ก่อนเพิ่มเข้าโปรเจกต์",
+      "phase": "1.2 · ทุกครั้งที่เพิ่มไลบรารี"
+    },
+    {
+      "id": "differential-review",
+      "kind": "plugin",
+      "plugin": "differential-review",
+      "marketplace": "trailofbits",
+      "publisher": "Trail of Bits",
+      "trust": "security-firm",
+      "runs": "Markdown only",
+      "why": "review ความปลอดภัยของการเปลี่ยนแปลงจาก git history ก่อน merge",
+      "phase": "ทุก Gate"
+    },
+    {
+      "id": "mcp-builder",
+      "kind": "skill-copy",
+      "repo": "https://github.com/anthropics/skills.git",
+      "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "path": "skills/mcp-builder",
+      "publisher": "Anthropic (Apache-2.0)",
+      "trust": "anthropic",
+      "runs": "Markdown + สคริปต์ประเมิน MCP (เรียก Anthropic API เมื่อสั่งรันเท่านั้น)",
+      "why": "ออกแบบ MCP server ของ Tool Registry (P3) ให้ถูกแบบ",
+      "phase": "1.4"
+    },
+    {
+      "id": "webapp-testing",
+      "kind": "skill-copy",
+      "repo": "https://github.com/anthropics/skills.git",
+      "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "path": "skills/webapp-testing",
+      "publisher": "Anthropic (Apache-2.0)",
+      "trust": "anthropic",
+      "runs": "Markdown + สคริปต์ Playwright (เปิด server ในเครื่องเมื่อสั่งรัน)",
+      "why": "เขียนและรัน E2E Playwright กับ AI Workspace / ERPNext ในเครื่อง",
+      "phase": "1.5 · 1.11"
+    },
+    {
+      "id": "frontend-design",
+      "kind": "skill-copy",
+      "repo": "https://github.com/anthropics/skills.git",
+      "commit": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "path": "skills/frontend-design",
+      "publisher": "Anthropic (Apache-2.0)",
+      "trust": "anthropic",
+      "runs": "Markdown only",
+      "why": "ออกแบบหน้า AI Workspace ให้ดูดี ใช้ง่าย",
+      "phase": "1.10"
+    },
+    {
+      "id": "context7",
+      "kind": "plugin",
+      "plugin": "context7",
+      "marketplace": "claude-plugins-official",
+      "publisher": "Upstash",
+      "trust": "partner",
+      "runs": "MCP server ภายนอก https://mcp.context7.com (ต้อง login ครั้งแรก · ส่งชื่อไลบรารีและคำถามออกนอกเครื่อง)",
+      "why": "ดึงเอกสารเวอร์ชันล่าสุดของ FastAPI · Next.js · pgvector · LangGraph · Playwright",
+      "phase": "ทั้งหมด"
+    },
+    {
+      "id": "how",
+      "kind": "skill-local",
+      "path": "local/how",
+      "upstream": "https://github.com/cursor/plugins.git",
+      "upstream_commit": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "publisher": "Lauren Tan (github.com/poteto) · pstack ใน cursor/plugins · ปรับให้ใช้กับ Claude Code (MIT)",
+      "trust": "individual",
+      "runs": "Markdown only · สั่ง subagent แบบอ่านอย่างเดียว (Explore / Plan)",
+      "why": "อธิบายว่าโค้ดส่วนหนึ่งทำงานยังไง และโค้ดใหม่ควรอยู่ตรงไหน เช่น Frappe / ERPNext",
+      "phase": "0.3 · ทุกครั้งที่ต้องอ่านโค้ดส่วนใหม่"
+    },
+    {
+      "id": "create-verification-skill",
+      "kind": "skill-local",
+      "path": "local/create-verification-skill",
+      "upstream": "https://github.com/cursor/plugins.git",
+      "upstream_commit": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "publisher": "Lauren Tan (github.com/poteto) · pstack ใน cursor/plugins · ปรับให้ใช้กับ Claude Code (MIT)",
+      "trust": "individual",
+      "runs": "Markdown only · ตอนสร้างจะเปิดแอปจริง 1 รอบเพื่อพิสูจน์ skill ที่สร้าง",
+      "why": "สร้าง skill verify-p4 ตาม 04c ข้อ 5.6: เปิดระบบ · doctor · ขับตามแผนที่ฟีเจอร์ · เก็บหลักฐาน",
+      "phase": "1.2 (โครง verify-p4)"
+    },
+    {
+      "id": "maintain-verification-skill",
+      "kind": "skill-local",
+      "path": "local/maintain-verification-skill",
+      "upstream": "https://github.com/cursor/plugins.git",
+      "upstream_commit": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "publisher": "Lauren Tan (github.com/poteto) · pstack ใน cursor/plugins · ปรับให้ใช้กับ Claude Code (MIT)",
+      "trust": "individual",
+      "runs": "Markdown only · subagent อ่านโค้ดทีละฟีเจอร์ แล้วขับแอปจริงทุกฟีเจอร์",
+      "why": "ตรวจว่า verify-p4 และแผนที่ฟีเจอร์ยังตรงกับแอป ก่อน git tag",
+      "phase": "ทุก Gate"
+    },
+    {
+      "id": "blast-radius",
+      "kind": "skill-local",
+      "path": "local/blast-radius",
+      "upstream": "https://github.com/cursor/plugins.git",
+      "upstream_commit": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "publisher": "Lauren Tan (github.com/poteto) · pstack ใน cursor/plugins · ปรับให้ใช้กับ Claude Code (MIT)",
+      "trust": "individual",
+      "runs": "Markdown only",
+      "why": "หาว่าการแก้จะไปพังที่อื่นนอก diff ไหม แล้วพิสูจน์ข้อเท็จจริงที่ทำให้ปลอดภัยด้วยการรันโค้ดจริง",
+      "phase": "ก่อน merge เมื่อ diff เล็กแต่ไม่มั่นใจ"
+    },
+    {
+      "id": "correct",
+      "kind": "skill-local",
+      "path": "local/correct",
+      "upstream": "https://github.com/cursor/plugins.git",
+      "upstream_commit": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "publisher": "Lauren Tan (github.com/poteto) · pstack ใน cursor/plugins · ปรับให้ใช้กับ Claude Code (MIT)",
+      "trust": "individual",
+      "runs": "Markdown only",
+      "why": "เปลี่ยนเรื่องที่ต้องแก้ให้ AI ซ้ำ ๆ เป็น architecture · type · lint · test แทนการเขียนเอกสาร",
+      "phase": "เมื่อโดนแก้เรื่องเดิมครั้งที่ 2"
+    },
+    {
+      "id": "tdd",
+      "kind": "skill-local",
+      "path": "local/tdd",
+      "upstream": "https://github.com/cursor/plugins.git",
+      "upstream_commit": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "publisher": "Lauren Tan (github.com/poteto) · pstack ใน cursor/plugins · ปรับให้ใช้กับ Claude Code (MIT)",
+      "trust": "individual",
+      "runs": "Markdown only",
+      "why": "แก้บั๊กโดยเขียนเทสที่ล้มก่อน เฉพาะเมื่อมีเทสที่ทำได้ถูก ๆ",
+      "phase": "ทุก Stage (test พร้อมเสาแต่ละต้น)"
+    },
+    {
+      "id": "typescript-best-practices",
+      "kind": "skill-local",
+      "path": "local/typescript-best-practices",
+      "upstream": "https://github.com/cursor/plugins.git",
+      "upstream_commit": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "publisher": "Lauren Tan (github.com/poteto) · pstack ใน cursor/plugins · ปรับให้ใช้กับ Claude Code (MIT)",
+      "trust": "individual",
+      "runs": "Markdown only",
+      "why": "type safety ของ AI Workspace (Next.js): discriminated union · branded type · ไม่ใช้ as · parse ที่ขอบระบบ",
+      "phase": "1.10"
+    },
+    {
+      "id": "unslop",
+      "kind": "skill-local",
+      "path": "local/unslop",
+      "upstream": "https://github.com/cursor/plugins.git",
+      "upstream_commit": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "publisher": "Lauren Tan (github.com/poteto) · pstack ใน cursor/plugins · ปรับให้ใช้กับ Claude Code (MIT)",
+      "trust": "individual",
+      "runs": "Markdown only",
+      "why": "ตัดสำนวน AI ออกจาก README · PR · เอกสารภาษาอังกฤษของพอร์ต",
+      "phase": "1.11 · ทุก PR"
+    }
+  ]
+}
